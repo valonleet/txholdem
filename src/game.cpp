@@ -5,12 +5,9 @@ using std::vector;
 using std::string;
 using std::ifstream;
 using std::invalid_argument;
+using std::max;
 
 // constructors
-/*ame::game() : playerFile("players.txt") {
-
-}*/
-
 game::game(string playerFile) : playerFile(playerFile) {
 
 }
@@ -145,6 +142,24 @@ void game::takeBets() {
 
 }
 
+void game::getWinner() {
+
+}
+
 void game::gameOver() {
 
+}
+
+// generate a game ID
+void genID(char *s, const int len) {
+    static const char alphanum[] =
+        "0123456789"
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        "abcdefghijklmnopqrstuvwxyz";
+
+    for (int i = 0; i < len; ++i) {
+        s[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
+    }
+
+    s[len] = 0;
 }

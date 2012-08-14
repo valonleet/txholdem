@@ -8,8 +8,7 @@
 
 class game {
 public:		
-	//game();
-	explicit game(std::string playerFile = "players.txt");
+	game(std::string playerFile = "players.txt");		// constructor, defaults playerFile to players.txt
 
 	player loadPlayer(std::string name);				// load a player, return true if the player was loaded, false if not
 	void addPlayer(std::string);						// add a player
@@ -19,9 +18,13 @@ public:
 	void turn();										// turn, next card on board
 	void river();										// river, final card on board
 	void takeBets();									// take bets
+	void getWinner();									// get the round winner
 	void gameOver();									// clean up once the round is finished
+
 		
 private:
+	std::string id;										// the game's id
+
 	const std::string playerFile;						// the file to load players from
 
 	deck dealt;											// the cards that have been dealt
@@ -32,5 +35,7 @@ private:
 	std::vector<player> players;						// the players
 														// players are positioned from left to right
 };
+
+void genID(char*, const int);
 
 #endif

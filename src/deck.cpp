@@ -99,18 +99,15 @@ string deck::cardToString(const deck::size_type card) {
 		value = "10";
 		break;
 	case 9:
-		value = "11";
-		break;
-	case 10:
 		value = "J";
 		break;
-	case 11:
+	case 10:
 		value = "Q";
 		break;
-	case 12:
+	case 11:
 		value = "K";
 		break;
-	case 13:
+	case 12:
 		value = "A";
 		break;
 	}

@@ -51,6 +51,9 @@ public:
 	hand();										// hand initializes two cards to -1
 	hand(size_type, size_type);					// creates a hand with the given cards
 
+	const size_type getFirstCard() const { return cards.first; }
+	const size_type getSecondCard() const { return cards.second; }
+
 	void setCards(size_type, size_type);		// set cards equal to the cards given
 
 private:

@@ -24,6 +24,7 @@ public:
 	// accessors
 	const std::string getName() const { return name; }				// return name
 	const unsigned int getMoney() const { return money; }			// return money
+	const hand getHand() const { return cards; }					// return hand
 
 	void modifyMoney(unsigned int, mode);							// add or subtract from the player's money
 	void setHand(deck::size_type, deck::size_type);					// set the player's hand
