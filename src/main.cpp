@@ -1,8 +1,13 @@
-#include "deck.h"
+#include "game.h"
 #include <iostream>
 
+using std::string;
+using std::cout;
+
 int main(void) {
-	deck d;
+	game g;
+	
+	g.addPlayer("testplayer");
 
 	return 0;
 }

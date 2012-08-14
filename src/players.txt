@@ -1,0 +1,2 @@
+testplayer
+100000

@@ -138,7 +138,7 @@ string deck::cardToString(const deck::size_type card) {
 }
 
 // generate a random card position
-deck::size_type randomCard(deck& d) {
+deck::size_type deck::randomCard() {
 	// really crappy way to generate a random number
 	vector<deck::size_type> possibleCards;
 	deck::size_type begin = 0;
@@ -146,7 +146,7 @@ deck::size_type randomCard(deck& d) {
 
 	// find all card positions that are not in play
 	while (begin != end) {
-		if (d.getCardBool(begin) == false) {
+		if (getCardBool(begin) == false) {
 			possibleCards.push_back(begin);
 		}
 		++begin;
@@ -166,8 +166,8 @@ deck::size_type randomCard(deck& d) {
 }
 
 // returns the value of a card as a bool
-bool inPlay(deck::size_type position, deck& d) {
-	return d.getCardBool(position);
+bool deck::inPlay(deck::size_type position) {
+	return getCardBool(position);
 }
 
 //======================

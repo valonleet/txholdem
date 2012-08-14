@@ -15,13 +15,24 @@ enum mode {
 //================
 class player {
 public:
+	player();														// default constructor, default string name and 0 money
+	player(std::string, unsigned int);								// create player from name and money
 
-	void modifyMoney(unsigned int, mode);				// add or subtract from the player's money
-	void setHand(deck::size_type, deck::size_type);		// set the player's hand
+	// operators
+	player operator=(const player&);								// assignment operator
+
+	// accessors
+	const std::string getName() const { return name; }				// return name
+	const unsigned int getMoney() const { return money; }			// return money
+
+	void modifyMoney(unsigned int, mode);							// add or subtract from the player's money
+	void setHand(deck::size_type, deck::size_type);					// set the player's hand
+	void commands();												// loop to take player command
 
 private:
-	unsigned int money;		// the player's money
-	hand cards;				// the cards the player has
+	std::string name;												// the player's account name
+	unsigned int money;												// the player's money
+	hand cards;														// the cards the player has
 };
 
 #endif
